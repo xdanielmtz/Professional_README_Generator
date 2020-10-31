@@ -1,8 +1,49 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
+const Choices = require("inquirer/lib/objects/choices");
 
 
-const mdTemplate = `
+
+inquirer.prompt([
+    {
+        type: "input",
+        message: "What is your project title?",
+        name: "title"
+
+    },
+    {
+        type: "input",
+        message: "Please enter your project description.",
+        name: "description"
+    },
+    {
+        type: "input",
+        message: "Please enter installation instructions.",
+        name: "instructions"
+    },
+    {
+        type: "input",
+        message: "Please enter contribution guidelines",
+        name: "contributions"
+    },
+    {
+        type: "input",
+        message: "Please enter examples on how to test your application.",
+        name: "tests"
+    },
+    {
+        type: "checkbox",
+        message: "Choose a license for your application",
+        name: "license",
+        choices:["MIT", ]
+    }
+
+])
+
+
+
+
+// const mdTemplate = `
 // # { Project Title Here }
 
 
@@ -22,12 +63,9 @@ const mdTemplate = `
 
 
 
-// ## How to Use { Project title here }
+// ## Usage
 // { how to use here }
 
-
-
-// ## Upon closer viewing this application, you will notice: 
 
 
 
@@ -60,23 +98,26 @@ const mdTemplate = `
 
 // ## License 
 // { License information here }
-`;
+// `;
 
-fs.writeFile("README.md")
+// fs.writeFile("README.md", mdTemplate, "utf8", (err) => {
+//     if (err) throw err;
+//     console.log("Successfully wrote markdown file");
+// })
 
-// array of questions for user
-const questions = [
+// // array of questions for user
+// const questions = [
 
-];
+// ];
 
-// function to write README file
-function writeToFile(fileName, data) {
-}
+// // function to write README file
+// function writeToFile(fileName, data) {
+// }
 
-// function to initialize program
-function init() {
+// // function to initialize program
+// function init() {
 
-}
+// }
 
-// function call to initialize program
-init();
+// // function call to initialize program
+// init();
