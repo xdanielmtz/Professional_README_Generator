@@ -23,6 +23,16 @@ inquirer.prompt([
     },
     {
         type: "input",
+        message: "Please provide examples and or instructions for usage.",
+        name: "usage"
+    },
+    {
+        type: "input",
+        message: "Enter credits for this project",
+        name: "credits"
+    },
+    {
+        type: "input",
         message: "Please enter contribution guidelines",
         name: "contributions"
     },
@@ -32,78 +42,94 @@ inquirer.prompt([
         name: "tests"
     },
     {
+        type: "input",
+        message: "What is your Github username?",
+        name: "github"
+    },
+    {
+        type: "input",
+        message: "What is your email so people can contact you for questions?",
+        name: "questions"
+    },
+    {
         type: "checkbox",
         message: "Choose a license for your application",
         name: "license",
-        choices:["MIT", ]
+        choices:["MIT", "The Unlicense", "Mozilla Public License 2.0", "Apache License 2.0", "Eclipse Public License 2.0"]
     }
 
-])
+]).then(response =>{
+    console.log(response);
+
+const mdTemplate = `
+# ${response.title}
+
+
+## Table of Contents
+
+
+
+## Description
+${response.description}
+
+
+
+## Installation of Repo
+${response.instructions}
+
+
+
+## Usage
+${response.usage}
+
+
+
+## Credits:
+${response.credits}
+
+
+
+## Tests 
+${response.tests}
+
+
+## Contributing 
+${response.contributions}
+
+
+## Questions
+https://github.com/${response.github}
+${response.questions}
+
+
+## Deployed Site Link
+{Enter your deployed site link}
+
+
+
+## Sneak Peak Image
+{Enter an image file of the application}
+
+
+
+## License 
+${response.choices}
+`;
+
+fs.writeFile("README.md", mdTemplate, "utf8", (err) => {
+    if (err) throw err;
+    console.log("Successfully wrote markdown file");
+})
+
+})
 
 
 
 
-// const mdTemplate = `
-// # { Project Title Here }
-
-
-
-// ## Description
-// { Description }
-
-
-
-// ## Installation of Repo
-// { Instructions here in list format }
-
-
-
-// ## Table of Contents
-// { Table of Contents here }
-
-
-
-// ## Usage
-// { how to use here }
 
 
 
 
-// ## Credits:
-
-
-
-// ## Tests 
-
-
-
-// ## Contributing 
-
-
-
-// ## Questions
-// { Github Profile }
-// { Email here }
-
-
-// ## Deployed Site Link
-// (Safe Music Lovers) https://ayannaaziz.github.io/Project-1/
-
-
-
-// ## Sneak Peak
-// ![Home Page](sml.png)
-
-
-
-// ## License 
-// { License information here }
-// `;
-
-// fs.writeFile("README.md", mdTemplate, "utf8", (err) => {
-//     if (err) throw err;
-//     console.log("Successfully wrote markdown file");
-// })
 
 // // array of questions for user
 // const questions = [
