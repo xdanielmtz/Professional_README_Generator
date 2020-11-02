@@ -55,7 +55,7 @@ inquirer.prompt([
         type: "checkbox",
         message: "Choose a license for your application",
         name: "license",
-        choices:["MIT", "The Unlicense", "Mozilla Public License 2.0", "Apache License 2.0", "Eclipse Public License 2.0"]
+        choices:["MIT", "The Unlicense", "Mozilla Public License 2.0", "Apache License 2.0"]
     }
 
 ]).then(response =>{
@@ -113,7 +113,7 @@ ${response.questions}
 
 
 ## License 
-${response.choices}
+${response.license.choices}
 `;
 
 fs.writeFile("README.md", mdTemplate, "utf8", (err) => {
