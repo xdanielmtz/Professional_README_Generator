@@ -1,6 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const Choices = require("inquirer/lib/objects/choices");
+
 
 inquirer.prompt([
     {
@@ -73,8 +73,6 @@ inquirer.prompt([
             }
         ]
     }
-    // "Mozilla Public License 2.0", "Apache License 2.0"
-
 ]).then(response =>{
     console.log(response);
 
@@ -137,13 +135,13 @@ ${response.questions}
 ${response.license}
 `;
 
+
 fs.writeFile("README.md", mdTemplate, "utf8", (err) => {
     if (err) throw err;
     console.log("Successfully wrote markdown file");
 })
 
 })
-
 
 function returnMIT (){
     const theMIT = `
