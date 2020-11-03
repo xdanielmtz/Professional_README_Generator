@@ -1,5 +1,3 @@
-const fs = require("fs");
-
 
 
 function returnMIT (){
@@ -28,6 +26,7 @@ function returnMIT (){
     `;
     return theMIT;
 }
+
 
 function returnUnlicense (){
     const theUnlicense = 
@@ -651,11 +650,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
     `;
     return apache;
-}
-
-module.exports = {
-    returnMIT ,
-    returnApache,
-    returnUnlicense,
-    theMozilla
 }

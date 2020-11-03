@@ -1,9 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const licenses = require("/Users/daniel/gt-pt/homework/Professional_README_Generator/Develop/licenses.js");
 const Choices = require("inquirer/lib/objects/choices");
-
-
 
 inquirer.prompt([
     {
