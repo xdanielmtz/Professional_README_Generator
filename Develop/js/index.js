@@ -81,6 +81,16 @@ inquirer.prompt([
 
 
 ## Table of Contents
+* [Description](#description)
+* [Installation](#installation-of-repo)
+* [Usage](#usage)
+* [Credits](#credits)
+* [Tests](#tests)
+* [Contributing](#contributing)
+* [Questions](#questions)
+* [Deployed Site Link](#deployed-site-link)
+* [Walk-through Vid](#walk-through-vid)
+* [License](#license)
 
 
 
@@ -125,8 +135,8 @@ ${response.questions}
 
 
 
-## Sneak Peak Image
-{Enter an image file of the application}
+## Walk-through Vid
+{Enter a gif of the application}
 
 
 
