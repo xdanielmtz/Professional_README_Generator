@@ -1,6 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const licenses = require("/Users/daniel/gt-pt/homework/Professional_README_Generator/Develop/licenses.js");
+const licenses = require("./licenses.js");
 
 
 inquirer.prompt([
@@ -75,9 +75,7 @@ inquirer.prompt([
         ]
     }
 ]).then(response =>{
-    console.log(response);
-
-const mdTemplate = `
+    const mdTemplate = `
 # ${response.title}
 
 
@@ -136,8 +134,7 @@ ${response.questions}
 ${response.license}
 `;
 
-
-fs.writeFile("README.md", mdTemplate, "utf8", (err) => {
+fs.writeFile("README.md",mdTemplate, "utf8", (err) => {
     if (err) throw err;
     console.log("Successfully wrote markdown file");
 })
