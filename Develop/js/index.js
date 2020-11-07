@@ -1,8 +1,9 @@
+// modules required
 const fs = require("fs");
 const inquirer = require("inquirer");
 const licenses = require("./licenses.js");
 
-
+// using inquirer to prompt the user with series of questions 
 inquirer.prompt([
     {
         type: "input",
@@ -74,7 +75,9 @@ inquirer.prompt([
             }
         ]
     }
+    // After the questions are complete, this is the code that will execute:
 ]).then(response =>{
+    // Used template literals to make the html template 
     const mdTemplate = `
 # ${response.title}
 
@@ -144,6 +147,7 @@ ${response.questions}
 ${response.license}
 `;
 
+// Used fs to write the actual readME file. It takes in the 'mdTemplate' 
 fs.writeFile("README.md",mdTemplate, "utf8", (err) => {
     if (err) throw err;
     console.log("Successfully wrote markdown file");

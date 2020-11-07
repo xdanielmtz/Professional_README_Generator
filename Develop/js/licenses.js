@@ -1,3 +1,4 @@
+// 4 functions to return the licenses information. Then injected in the checkbox value in index.js
 function returnMIT (){
     const theMIT = `
     MIT License
@@ -532,6 +533,7 @@ limitations under the License.
     return apache;
 }
 
+// Exporting the 4 license functions to then use in the index.js
 module.exports = {
     returnApache,
     theMozilla,
